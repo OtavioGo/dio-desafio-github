@@ -1,0 +1,103 @@
+Uma ferramenta para poder praticar o Kotlin
+https://play.kotlinlang.org/
+
+Tipos de dado
+Int / Long / Float / Double / Array / Boolean / Char / Byte / Short / Null!
+
+Como saber o valor maximo que se pode usar em um tipo de dado use:
+
+println(Int.MAX_VALUE) //para Int
+
+println(Float.MAX_VALUE) //para Float
+
+println(Long.MAX_VALUE) //para Long
+
+println(Byte.MAX_VALUE) //para Byte
+
+println(Short.MAX_VALUE) //para Short
+
+
+É possivel tambem converter os dados que você tem
+
+toByte()
+toShort()
+toInt()
+toLong()
+toFloat()
+toDouble()
+toChar()
+
+val a: Int = 10   
+val b: Int = 20
+val total = a + b
+
+println (total.toString()) //Depois de se ter o valor total em inteiro ele converte para String
+
+===============================================================
+Declaração de variável
+
+Var(Variável que pode ter seu valor alterado durante o código)
+var idade = 22
+
+Val(Variável que terá somente o valor atribuído)
+val idade = 22
+
+Const Val(Constante cujo valor é atribuído durante a compilação)
+const val IDADE_MIN = 16
+
+===============================================================
+Nulabilidade
+
+Qualquer tipo pode ser nulo, porém isso deve ser explicitado na declaração de variável
+através do uso da interrogação '?'
+
+var mes : Int? = null //Atribui valor nulo
+
+var mes : Int = null //Não atribui valor nulo
+
+================================================================
+Operadores comparativos
+
+maior/menor a > b ou a < b
+
+maoir/menor igual a >= b ou a <= b
+
+igual a == b
+
+diferente a != b
+
+val d = 22
+val t = 90
+
+println (d > t) //False
+
+Operadores Lógicos
+
+E (&&) / Ou (||)
+
+Operadores In e range
+
+contém (in) / Não contém (!in) / range/Faixa de valores (int..int)
+
+val numero = listOf(3,9,0,1,2)
+print(12 in numero)
+//false
+
+print(12 in 0..20)
+//true
+
+
+
+const val MIN_AGE = 16
+const val MAX_AGE = 68
+
+fun main() {
+   var age = (10..100).random()
+   println(age)
+   println(age in MIN_AGE..MAX_AGE)
+   println(age >= MIN_AGE && age <= MAX_AGE)
+}
+//62 true true
+
+==============================================================
+Manipulação de String

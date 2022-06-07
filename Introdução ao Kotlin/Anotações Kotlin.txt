@@ -101,3 +101,126 @@ fun main() {
 
 ==============================================================
 Manipulação de String
+
+Concatenação, para concatenar duas String o plus/+ pode ser utilizado
+println(nome + sobrenome) //Imprime "Otavio Gomes"
+
+Para concatenar uma variável a uma String, os simbolos ${} devem ser inseridos
+println("${nome} ${sobrenome}") //Imprime "Otavio Gomes"
+
+===============================================================
+Empty x Blank
+
+Se o tamanho da string (s.length) for 0 está empty e Blank;
+Se o tamanho for > 0 mas todos os caracteres são espaços em branco,
+está blank mas não empty.
+
+val s = ""
+println(s.isEmpty()) //true
+println(s.isBlank()) //true
+
+val s = "    "
+println(s.isEmpty()) //false
+println(s.isBlank()) //true
+
+===============================================================
+Funções 
+
+Simplificando uma função
+
+private fun getFullname(name:String, lastName:String):String{
+	val fullname = "$name $lastName"
+	return fullname
+}
+//
+
+private fun getFullname(name:String, lastName:String):String{
+	return "$name $lastName"
+}
+//
+
+private fun getFullname(name:String, lastName:String) = "$name $lastName"
+//
+
+fun main() {println(somaNumero(9,3))}
+fun somaNumero(valor1:Int, valor2:Int) = valor1+valor2
+//12
+
+extensões
+
+prefixo Fun Tipo.nomeDaFuncao();
+Cria uma função que só pode ser chamada por um tipo específico, cujo o valor
+pode ser referenciado dentro da função através da palavra this;
+
+fun String.randomCapitalizedLetter()=
+this[(0..this.length-1).random()].toUpperCase()
+
+===============================================================
+Estrutura de controle 
+
+if/else, when, elvis operator;
+Pode ser utilizado tanto para controle quanto para atribuição;
+Pode ser encadeado com múltiplas estruturas;
+
+if(expressao){
+	//bloco de codigo
+}else if (expressao2){
+	//bloco de codigo
+}else{
+	//bloco de codigo
+}
+
+when {
+	case1 -> {}
+	case2 -> {}
+	case3 -> {}
+	else -> {}
+}
+
+Atribuição
+
+val a = 5
+val b = 7
+
+val MaxValue = if (a > b) a else if (a < b) b else b
+//b(7)
+
+val minValue = if (a > b){
+	println("b($b) é o menor valor")
+	b
+}else if (a < b){
+	println("a($a) é o menor valor")
+	a
+}else{
+	println("os valores são iguais")
+	b
+}
+//a(5)
+
+===============================================================
+Repetição
+
+While, do..while, for e forEach;
+Estruturas similares ás convencionais em outras linguagens;
+Aceita os comandos in, range, until, downTo e step;
+
+while(condicao){
+//codigo
+}
+
+do{
+//codigo
+} while(condicao)
+
+//Esse exemplo ira contar de 0 a 20 de 2 em 2
+for(i in 0..20 step 2){
+	println(i) //0 2 4 6 8 10 12 14 16 18 20
+}
+
+For
+for(variavelIndexadora in/until/downTo faixa de valores/condicional step intervalo)
+
+in: conta do valor inicial até o valor final estabelecido;
+until: conta do valor atual até o valor estabelecido menos 1;
+downTo: conta de maneira decrescente;
+step: determina o intervalo da contagem;
